@@ -1,6 +1,13 @@
+
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // Chemins relatifs : fonctionne sur un dépôt GitHub Pages de type /nom-du-depot/.
+  // Compatible avec GitHub Pages et les dépôts hébergés en sous-dossier.
   base: './',
+
+  // Utilise le nouveau runtime JSX de React.
+  // Évite d'avoir besoin d'un import React global dans cachalot.jsx.
+  esbuild: {
+    jsx: 'automatic',
+  },
 });
